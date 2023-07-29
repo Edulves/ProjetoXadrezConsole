@@ -95,6 +95,12 @@ namespace xadrez_console2
         public static PosicaoXadrez lerPosicaoXadrez()
         {
             string s = Console.ReadLine();
+            Console.WriteLine(s);
+            if (string.IsNullOrEmpty(s) || string.IsNullOrWhiteSpace(s))
+            {
+                throw new TabuleiroException("Por favor, selecione uma peça!");
+                return null;
+            }
             char coluna = s[0];
             int linha = int.Parse(s[1] + "");
             return new PosicaoXadrez(coluna, linha);
